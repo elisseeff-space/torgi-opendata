@@ -1,0 +1,66 @@
+{
+    "standardversion": "https://torgi.gov.ru/new/nsi/v1/file-store/68de96d9781d120ec4fce543",
+    "identifier": "7710568760-masterData",
+    "title": "Нормативно-справочная информация",
+    "description": "Нормативно-справочная информация, размещённая на ОС ГИС Торги",
+    "creator": "Федеральное казначейство",
+    "created": "20220101",
+    "modified": "20251220T0000",
+    "subject": "Справочник видов и форм торгов,Справочник основания отмены извещения / лота, Справочник основания приостановки процедуры проведения торгов, Справочник причин отказа в допуске заявки,Справочник порядков оплаты, Справочник субъектов РФ (Регионы РФ), Справочник типов структурированных документов, Справочник часовых зон, Справочник электронных площадок, Справочник форм собственности,Справочник: Тип вложений, Справочник: Основания признания процедуры несостоявшейся, Справочник причин отказа от заключения договора",
+    "format": ".json",
+    "data": [
+        {
+            "source": "https://torgi.gov.ru/new/opendata/7710568760-masterData/data-20220101T0000-20251215T0000-structure-20250101.json",
+            "created": "20251215T0000",
+            "provenance": "Выгрузка изменений справочника за 01.2022",
+            "valid": "20251215",
+            "structure": "20250101"
+        },
+        {
+            "source": "https://torgi.gov.ru/new/opendata/7710568760-masterData/data-20251214T0000-20251216T0000-structure-20250101.json",
+            "created": "20251216T0000",
+            "provenance": "Выгрузка изменений справочника за 15.12.2025",
+            "valid": "20251217",
+            "structure": "20250101"
+        },
+        {
+            "source": "https://torgi.gov.ru/new/opendata/7710568760-masterData/data-20251216T0000-20251217T0000-structure-20250101.json",
+            "created": "20251217T0000",
+            "provenance": "Выгрузка изменений справочника за 16.12.2025",
+            "valid": "20251218",
+            "structure": "20250101"
+        },
+        {
+            "source": "https://torgi.gov.ru/new/opendata/7710568760-masterData/data-20251217T0000-20251218T0000-structure-20250101.json",
+            "created": "20251218T0000",
+            "provenance": "Выгрузка изменений справочника за 17.12.2025",
+            "valid": "20251219",
+            "structure": "20250101"
+        },
+        {
+            "source": "https://torgi.gov.ru/new/opendata/7710568760-masterData/data-20251218T0000-20251219T0000-structure-20250101.json",
+            "created": "20251219T0000",
+            "provenance": "Выгрузка изменений справочника за 18.12.2025",
+            "valid": "20251220",
+            "structure": "20250101"
+        },
+        {
+            "source": "https://torgi.gov.ru/new/opendata/7710568760-masterData/data-20251219T0000-20251220T0000-structure-20250101.json",
+            "created": "20251220T0000",
+            "provenance": "Выгрузка изменений справочника за 19.12.2025",
+            "valid": "20251221",
+            "structure": "20250101"
+        }
+    ],
+    "structure": [
+        {
+            "source": "https://torgi.gov.ru/new/opendata/7710568760-masterData/structure-20250101.json",
+            "created": "20250101"
+        }
+    ],
+    "publisher": {
+        "name": "Сапан Евгений Валерьевич",
+        "phone": "+78003010777",
+        "mbox": "info@roskazna.ru"
+    }
+}

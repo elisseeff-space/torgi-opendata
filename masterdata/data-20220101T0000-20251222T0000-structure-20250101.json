@@ -1,0 +1,184 @@
+{
+    "listObjects": [
+        {
+            "NSIType": "abandonedReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.062Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/abandonedReason_5f8b75b6-aec3-4425-9ecb-7a27501ec2f9.json"
+        },
+        {
+            "NSIType": "ownershipForms",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.358Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/ownershipForms_71df9d4c-9cca-4255-9bf4-e98d9ab8e3cc.json"
+        },
+        {
+            "NSIType": "contractTerminationReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.593Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/contractTerminationReason_e57aada1-85bd-410e-a206-524b30410192.json"
+        },
+        {
+            "NSIType": "categories",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.412Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/categories_27e68aa5-3013-46bc-8ea1-cc7c211d297b.json"
+        },
+        {
+            "NSIType": "stopReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.624Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/stopReason_90d27b1c-7cfb-415a-b6ac-c163c4689312.json"
+        },
+        {
+            "NSIType": "electronicPlatform",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.656Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/electronicPlatform_ff15fdef-20b0-4c0c-accd-b5bd84625181.json"
+        },
+        {
+            "NSIType": "listType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.759Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/listType_79977a99-7fbf-4417-adb5-199037af2415.json"
+        },
+        {
+            "NSIType": "paymentType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.786Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/paymentType_6505e550-a835-462b-9f2b-f327a1753068.json"
+        },
+        {
+            "NSIType": "regionSubject",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.812Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/regionSubject_d017507a-e8b7-451b-aa70-a1919d991e51.json"
+        },
+        {
+            "NSIType": "chargeType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.864Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/chargeType_6cd29799-ff30-4e13-aea1-467f349d6079.json"
+        },
+        {
+            "NSIType": "attachmentType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:00.927Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/attachmentType_740c625e-58a3-47c2-82f0-0762e5868a6a.json"
+        },
+        {
+            "NSIType": "contractExecutionStagesType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.018Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/contractExecutionStagesType_85e8f42c-df15-47df-96dc-fef0e54c298e.json"
+        },
+        {
+            "NSIType": "contractTerminationFoundation",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.085Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/contractTerminationFoundation_573e5bb3-b34d-4e27-9e04-8931640fcb79.json"
+        },
+        {
+            "NSIType": "contractRefusalReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.051Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/contractRefusalReason_6fa5dee5-0fd3-4a80-9385-bf900181fb55.json"
+        },
+        {
+            "NSIType": "noticeChangeReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.142Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/noticeChangeReason_32a7715b-695d-4001-beb2-aebe4ac66c3a.json"
+        },
+        {
+            "NSIType": "timeZones",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.181Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/timeZones_621f0d26-dc67-4ae9-8664-4fa7b457a84c.json"
+        },
+        {
+            "NSIType": "selectNSI",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.231Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/selectNSI_c2e6b59f-bcbc-4fd0-ae04-dd228618069a.json"
+        },
+        {
+            "NSIType": "contractType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.298Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/contractType_b2584787-0fc3-49dd-91db-de6ec82ab6f7.json"
+        },
+        {
+            "NSIType": "structuredDocumentType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.332Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/structuredDocumentType_5509f46f-9642-467a-81b8-e05fc2b7af46.json"
+        },
+        {
+            "NSIType": "contractInvalidatingReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.455Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/contractInvalidatingReason_9f02580e-df9f-430c-99e2-63774dc30e1a.json"
+        },
+        {
+            "NSIType": "specifications",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.404Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/specifications_9335a6f0-a70c-4675-ae19-25ae80dbed8c.json"
+        },
+        {
+            "NSIType": "contractKind",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.484Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/contractKind_dd1359c2-0b8b-42eb-9438-148f3c7b4abf.json"
+        },
+        {
+            "NSIType": "budgetLevel",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.558Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/budgetLevel_2c4c161d-38dd-4eaa-8485-ad7261193f04.json"
+        },
+        {
+            "NSIType": "cancelReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.511Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/cancelReason_b1708c26-7fea-4706-ae76-fc62919bad61.json"
+        },
+        {
+            "NSIType": "penaltyType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.593Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/penaltyType_2581552b-1bbb-4c48-8d33-c1139ccd1866.json"
+        },
+        {
+            "NSIType": "annulmentReasons",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.695Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/annulmentReasons_8ae8fd7f-01d5-4b31-b257-f04e65d1aad2.json"
+        },
+        {
+            "NSIType": "refusalAdmissionReasons",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.635Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/refusalAdmissionReasons_bd964f52-12f9-4898-986a-8bf027004393.json"
+        },
+        {
+            "NSIType": "biddType",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.728Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/biddType_461d50d8-a723-4cc7-b5b8-060c7ccd0f81.json"
+        },
+        {
+            "NSIType": "penaltyReason",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.797Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/penaltyReason_5a70b8cc-6529-408f-ba5d-7fda1ce25215.json"
+        },
+        {
+            "NSIType": "noticesVAT",
+            "startDate": "2021-01-10T00:00:00.000Z",
+            "endDate": "2025-12-21T23:50:01.835Z",
+            "href": "https://torgi.gov.ru/new/opendata/7710568760-masterData/docs/noticesVAT_5066b40b-6b46-4623-9bb1-8317306337be.json"
+        }
+    ]
+}

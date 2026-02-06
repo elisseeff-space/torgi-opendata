@@ -1,0 +1,985 @@
+{
+    "exportObject": {
+        "structuredObject": {
+            "masterData": {
+                "schemeVersion": "4.3",
+                "NSI": [
+                    {
+                        "specifications": {
+                            "code": "nominalValueOfshareOfAuthorizedCapital",
+                            "name": "Номинальная стоимость доли в уставном капитале ООО, принадлежащей Российской Федерации, субъекту РФ или муниципальному образованию",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "46",
+                                        "name": "Доля ООО"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Money",
+                                "name": "Money",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "383",
+                                "name": "Рубль",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "383",
+                                        "name": "Рубль"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "SquareZU_project",
+                            "name": "Площадь земельного участка в соответствии с проектом межевания территории или со схемой расположения",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "307",
+                                        "name": "Земельные участки (не образованы)"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "055",
+                                "name": "Квадратный метр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "055",
+                                        "name": "Квадратный метр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "mileage",
+                            "name": "Пробег",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "100001",
+                                        "name": "Легковые автомобили"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "100002",
+                                        "name": "Грузовые автомобили"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "100000",
+                                        "name": "Мототехника"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "31",
+                                        "name": "Автобусы"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "101",
+                                        "name": "Спецтехника"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "16",
+                                        "name": "Водный транспорт"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "103",
+                                        "name": "Воздушный транспорт"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "110",
+                                        "name": "Иной транспорт"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Int",
+                                "name": "Int",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "008",
+                                "name": "Километр; тысяча метров",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "008",
+                                        "name": "Километр; тысяча метров"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "RLU_square",
+                            "name": "Площадь (размер) рыболовного участка",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "605000",
+                                        "name": "Промышленное рыболовство"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "605001",
+                                        "name": "Осуществление традиционного рыболовства"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "605002",
+                                        "name": "Организация любительского рыболовства"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "059",
+                                "name": "Гектар",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "059",
+                                        "name": "Гектар"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "HuntLandSquare",
+                            "name": "Площадь охотничьего угодья",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "603",
+                                        "name": "Охотхозяйственные соглашения"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "059",
+                                "name": "Гектар",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "059",
+                                        "name": "Гектар"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "totalAreaRealty",
+                            "name": "Общая площадь",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "8",
+                                        "name": "Здания"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "47",
+                                        "name": "Сооружения"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "202",
+                                        "name": "Имущественные комплексы"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "11",
+                                        "name": "Нежилые помещения"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "9",
+                                        "name": "Жилые помещения"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "10",
+                                        "name": "Гаражи и машиноместа"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "19",
+                                        "name": "Объект теплоснабжения"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "20",
+                                        "name": "Объект водоснабжения и (или) водоотведения"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "081",
+                                "name": "Квадратный метр общей площади",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "081",
+                                        "name": "Квадратный метр общей площади"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "SquareZU",
+                            "name": "Площадь земельного участка",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "4",
+                                        "name": "Земли сельскохозяйственного назначения"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "304",
+                                        "name": "Земли лесного фонда"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "301",
+                                        "name": "Земли населенных пунктов"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "2804",
+                                        "name": "Земли водного фонда"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "302",
+                                        "name": "Земли специального назначения"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "2004",
+                                        "name": "Земли особо охраняемых территорий и объектов"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "3",
+                                        "name": "Земельные участки (категория не установлена)"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "055",
+                                "name": "Квадратный метр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "055",
+                                        "name": "Квадратный метр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "squareMR",
+                            "name": "Площадь",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "609",
+                                        "name": "Пользование участками недр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "061",
+                                "name": "Квадратный километр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "055",
+                                        "name": "Квадратный метр"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "OKEI": {
+                                        "code": "059",
+                                        "name": "Гектар"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "OKEI": {
+                                        "code": "061",
+                                        "name": "Квадратный километр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "totalShares",
+                            "name": "Общее количество акций",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "45",
+                                        "name": "Акции АО"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Int",
+                                "name": "Int",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "796",
+                                "name": "Штука",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "796",
+                                        "name": "Штука"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "WaterAreaSquare",
+                            "name": "Площадь акватории водного объекта",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "602",
+                                        "name": "Водопользование"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "061",
+                                "name": "Квадратный километр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "061",
+                                        "name": "Квадратный километр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "squareKRT",
+                            "name": "Площадь земельного участка",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "701",
+                                        "name": "Комплексное развитие территорий"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "055",
+                                "name": "Квадратный метр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "055",
+                                        "name": "Квадратный метр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "employessNumber",
+                            "name": "Численность работников хозяйственного общества",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "45",
+                                        "name": "Акции АО"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "46",
+                                        "name": "Доля ООО"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Int",
+                                "name": "Int",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "792",
+                                "name": "Человек",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "792",
+                                        "name": "Человек"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "landArea",
+                            "name": "Площадь земельного участка или земельных участков, на которых расположено недвижимое имущество хозяйственного общества",
+                            "required": true,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "45",
+                                        "name": "Акции АО"
+                                    },
+                                    "published": true
+                                },
+                                {
+                                    "category": {
+                                        "code": "46",
+                                        "name": "Доля ООО"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "059",
+                                "name": "Гектар",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "059",
+                                        "name": "Гектар"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "percCompletionObj",
+                            "name": "Готовность объекта в %",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "206",
+                                        "name": "Объекты незавершенного строительства"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "744",
+                                "name": "Процент",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "744",
+                                        "name": "Процент"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "advertisingStructureArea",
+                            "name": "Площадь рекламной конструкции",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "614",
+                                        "name": "Право на размещение рекламных конструкций"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "055",
+                                "name": "Квадратный метр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "055",
+                                        "name": "Квадратный метр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "squareZU1299",
+                            "name": "Площадь земельного участка",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "206",
+                                        "name": "Объекты незавершенного строительства"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "055",
+                                "name": "Квадратный метр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "055",
+                                        "name": "Квадратный метр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "RVU_square",
+                            "name": "Площадь рыбоводного участка",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "604",
+                                        "name": "Пользование рыбоводным участком"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "059",
+                                "name": "Гектар",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "059",
+                                        "name": "Гектар"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "nominalValueOfshares",
+                            "name": "Номинальная стоимость акций",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "45",
+                                        "name": "Акции АО"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Money",
+                                "name": "Money",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "383",
+                                "name": "Рубль",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "383",
+                                        "name": "Рубль"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "shareOfAuthorizedCapital",
+                            "name": "Размер доли в уставном капитале ООО, принадлежащей Российской Федерации, субъекту РФ или муниципальному образованию",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "46",
+                                        "name": "Доля ООО"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Money",
+                                "name": "Money",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "744",
+                                "name": "Процент",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "744",
+                                        "name": "Процент"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "shareSizeRealty",
+                            "name": "Размер доли (Доля в праве (доля в жилом помещении))",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "9",
+                                        "name": "Жилые помещения"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Money",
+                                "name": "Money",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "744",
+                                "name": "Процент",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "744",
+                                        "name": "Процент"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "squareDCP",
+                            "name": "Площадь земельного участка",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "2301",
+                                        "name": "Проектирование и строительство объекта"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Decimal",
+                                "name": "Decimal",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "055",
+                                "name": "Квадратный метр",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "055",
+                                        "name": "Квадратный метр"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    },
+                    {
+                        "specifications": {
+                            "code": "KR_quotaSize",
+                            "name": "Доля квоты добычи (вылова) крабов",
+                            "required": false,
+                            "categoryCodes": [
+                                {
+                                    "category": {
+                                        "code": "615",
+                                        "name": "Квоты добычи (вылова) крабов в инвестиционных целях"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "fieldType": {
+                                "code": "Text(500)",
+                                "name": "Text(500)",
+                                "published": true
+                            },
+                            "OKEI": {
+                                "code": "744",
+                                "name": "Процент",
+                                "published": true
+                            },
+                            "OKEIList": [
+                                {
+                                    "OKEI": {
+                                        "code": "744",
+                                        "name": "Процент"
+                                    },
+                                    "published": true
+                                }
+                            ],
+                            "published": true
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

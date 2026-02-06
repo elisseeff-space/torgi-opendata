@@ -1,0 +1,84 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"title": "NsiOpenDataList",
+	"description": "Структура набора открытых данных НСИ. Версия 3.2 от 01.07.2024",
+	"type": "object",
+	"properties": {
+		"listObjects": {
+			"$ref": "#/definitions/ListObjects"
+		}
+	},
+	"additionalProperties": false,
+	"definitions": {
+		"ListObjects": {
+			"description": "Cхема для списка выгруженных открытых данных",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/NsiListObject"
+			}
+		},
+		"NsiListObject": {
+			"description": "Информация о выгруженном объекте данных",
+			"type": "object",
+			"properties": {
+				"NSIType": {
+					"description": "Наименование справочника:             biddType - Справочник видов и форм торгов;\r\ncancelReason - Справочник основания отмены извещения / лота;\r\nstopReason - Справочник основания приостановки процедуры проведения торгов;\r\nrefusalAdmissionReasons - Справочник причин отказа в допуске заявки;\r\npaymentOrder - Справочник порядков оплаты;\r\nregionSubject - Справочник субъектов РФ (Регионы РФ);\r\nstructuredDocumentType - Справочник типов структурированных документов;\r\ntimeZones - Справочник часовых зон;\r\nelectronicPlatform - Справочник электронных площадок;\r\nownershipForms - Справочник форм собственности;\r\nattachmentType - Справочник Тип вложений;\r\nabandonedReason - Справочник основания признания процедуры несостоявшейся;\r\ncontractRefusalReason - Справочник причин отказа от заключения договора;       categories - Категории имущества; specifications - характеристики;        selectNSI - значения характеристик;\r\nnoticeChangeReason - Основание внесения изменений в извещение;\r\ncontractType - Вид договора;\r\ncontractKind - Тип договора;\r\npaymentType - Вид платежа;\r\ncontractTerminationReason - Причины расторжения договора;\r\ncontractTerminationFoundation - Основания расторжения;\r\nbudgetLevel - Уровень бюджета;\r\npenaltyReason - Причины начисления неустойки;\r\npenaltyType - Вид неустойки;\r\nannulmentReasons - Основания аннулирования результатов торгов;\r\ncontractInvalidatingReason - Причины признания договора недействительным;\r\nnoticesVAT - Признаки учёта НДС в извещениях;\r\nlistType - Справочник Тип перечня имущества;\r\ncontractExecutionStagesType - Типы этапов исполнения договора;\r\nchargeType - Виды начисления.",
+					"type": "string",
+					"enum": [
+						"biddType",
+						"cancelReason",
+						"stopReason",
+						"refusalAdmissionReasons",
+						"paymentOrder",
+						"regionSubject",
+						"structuredDocumentType",
+						"timeZones",
+						"electronicPlatform",
+						"ownershipForms",
+						"attachmentType",
+						"abandonedReason",
+						"contractRefusalReason",
+						"categories",
+						"specifications",
+						"selectNSI",
+						"noticeChangeReason",
+						"contractType",
+						"contractKind",
+						"paymentType",
+						"contractTerminationReason",
+						"contractTerminationFoundation",
+						"budgetLevel",
+						"penaltyReason",
+						"penaltyType",
+						"annulmentReasons",
+						"contractInvalidatingReason",
+						"noticesVAT",
+						"listType",
+						"contractExecutionStagesType",
+						"chargeType"
+					]
+				},
+				"startDate": {
+					"description": "Дата начала периода, в котором внесены изменения",
+					"type": "string",
+					"format": "date-time"
+				},
+				"endDate": {
+					"description": "Дата окончания периода, в котором внесены изменения",
+					"type": "string",
+					"format": "date-time"
+				},
+				"href": {
+					"description": "Гиперссылка на скачивание изменений",
+					"type": "string"
+				}
+			},
+			"required": [
+				"NSIType",
+				"startDate",
+				"endDate",
+				"href"
+			]
+		}
+	}
+}

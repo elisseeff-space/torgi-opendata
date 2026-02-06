@@ -1,0 +1,76 @@
+{
+    "exportObject": {
+        "structuredObject": {
+            "privatizationDecision": {
+                "schemeVersion": "4.3",
+                "id": "3fabcaea-cfcf-4f48-b3e8-a3d7cbe2a27c",
+                "commonInfo": {
+                    "decisionNumber": "041422000005130003020003",
+                    "publishDate": "2025-12-01T02:23:54.836Z",
+                    "timeZone": {
+                        "code": "TM93",
+                        "name": "MSK+04:00 (UTC+07:00)"
+                    },
+                    "signedData": {
+                        "id": "692cfc23cbb6947ac11d4ad5",
+                        "size": 16118,
+                        "hash": "6b4350696024a5812c72cc94cccc3de899aa3e77df92db7d08683b0397c20e59",
+                        "fileType": "JSON"
+                    }
+                },
+                "hostingOrg": {
+                    "code": "2200000513"
+                },
+                "bidderOrg": {
+                    "code": "2200000513",
+                    "name": "КОМИТЕТ ПО УПРАВЛЕНИЮ МУНИЦИПАЛЬНЫМ ИМУЩЕСТВОМ ГОРОДА КЕМЕРОВО",
+                    "INN": "4209014443",
+                    "KPP": "420501001",
+                    "OGRN": "1024200712161",
+                    "orgType": "LEGAL",
+                    "unregistered": false
+                },
+                "privatizationReason": "Решение об условиях приватизации муниципального имущества принято                 постановлением администрации города Кемерово от 22.09.2025 № 3179",
+                "startPrice": "34667592.00",
+                "biddForms": [
+                    {
+                        "code": "EA",
+                        "name": "Электронный аукцион"
+                    }
+                ],
+                "stockInfo": {
+                    "minusOne": false
+                },
+                "privatizationObject": {
+                    "planNumber": "20240314220000051304",
+                    "objectNumber": "04142200000513000302",
+                    "name": "нежилые здания, общей площадью 1 659,7кв.м, кадастровые номера:42:24:0301013:3314,42:24:0301013:3313, расположенные по адресу: г. Кемерово, ул. Назарова, 9, ул. Назарова,9 литер Б. Характеристика имущества: Отдельно стоящее, материал стен – кирпич, этажность 2 (42:24:0301013:3314), Отдельно стоящее, материал стен – панель, этажность 1 (42:24:0301013:3313)",
+                    "type": "OTHER",
+                    "isNotInPlan": false
+                },
+                "attachments": [
+                    {
+                        "id": "692cfa79166bab0532fbcd1d",
+                        "name": "Постановление.pdf",
+                        "size": 375016,
+                        "hash": "a0afe4dd409b38fe8f16fe93222f2d6daefbc9ed472f1acfd9ac7b66fb6d3668",
+                        "attachmentType": {
+                            "code": "Decision_Document",
+                            "name": "Решение об условиях приватизации"
+                        }
+                    }
+                ]
+            }
+        },
+        "attachments": [
+            {
+                "contentId": "692cfa79166bab0532fbcd1d",
+                "URL": "https://torgi.gov.ru/new/file-store/v1/692cfa79166bab0532fbcd1d"
+            },
+            {
+                "contentId": "692cfc23cbb6947ac11d4ad5",
+                "URL": "https://torgi.gov.ru/new/file-store/v1/692cfc23cbb6947ac11d4ad5"
+            }
+        ]
+    }
+}

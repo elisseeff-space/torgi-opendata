@@ -3,31 +3,31 @@
 Module to export privatisation plans data to Excel sheets
 """
 
-import sqlite3
 import pandas as pd
 import argparse
 from pathlib import Path
+from db_utils import get_db_connection
 
 
 def export_to_excel():
     """Export privatisation plans data to Excel with separate sheets"""
-    conn = sqlite3.connect('torgi.db')
-    
+    conn = get_db_connection()
+
     # Read data from tables
     privatisation_plans_df = pd.read_sql_query("SELECT * FROM privatisationplans", conn)
     privatisation_planlist_df = pd.read_sql_query("SELECT * FROM privatisationplanlist", conn)
     privatization_objects_df = pd.read_sql_query("SELECT * FROM privatizationobjects", conn)
-    
+
     conn.close()
-    
+
     # Export to Excel with separate sheets
     excel_filename = 'privatisation_plans_export.xlsx'
-    
+
     with pd.ExcelWriter(excel_filename, engine='openpyxl') as writer:
         privatisation_plans_df.to_excel(writer, sheet_name='privatisationplans', index=False)
         privatisation_planlist_df.to_excel(writer, sheet_name='privatisationplanlist', index=False)
         privatization_objects_df.to_excel(writer, sheet_name='privatizationobjects', index=False)
-    
+
     print(f"Data exported to {excel_filename}")
 
 

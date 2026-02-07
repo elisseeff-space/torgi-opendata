@@ -6,14 +6,14 @@ Test script to verify the implemented functionality
 import subprocess
 import sys
 import os
-import sqlite3
 import pandas as pd
+from db_utils import get_db_connection
 
 
 def test_main_module():
     """Test the main module functionality"""
     print("Testing main module...")
-    
+
     # Test creating database
     result = subprocess.run([sys.executable, 'main.py', '--createdb'], capture_output=True, text=True)
     print("Database creation result:", result.returncode)
@@ -21,20 +21,36 @@ def test_main_module():
         print("STDOUT:", result.stdout)
     if result.stderr:
         print("STDERR:", result.stderr)
-    
-    # Check if database file was created
-    if os.path.exists('torgi.db'):
-        print("✓ Database file created successfully")
-        
+
+    # Check if database file was created (for SQLite) or connection works (for SQL Server)
+    db_type = os.getenv('TORGIDB', 'SQLITE').upper()
+    if db_type == 'SQLITE':
+        db_exists = os.path.exists('torgi.db')
+    else:
+        # For SQL Server, just test if we can connect
+        try:
+            conn = get_db_connection()
+            conn.close()
+            db_exists = True
+        except:
+            db_exists = False
+
+    if db_exists:
+        print("✓ Database connection successful")
+
         # Connect to database and check tables
-        conn = sqlite3.connect('torgi.db')
+        conn = get_db_connection()
         cursor = conn.cursor()
-        
-        # Get list of tables
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+
+        # Get list of tables (different query for SQL Server)
+        if db_type == 'SQLSERVER':
+            cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'")
+        else:
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+            
         tables = cursor.fetchall()
         print(f"Tables in database: {tables}")
-        
+
         # Verify required tables exist
         required_tables = ['privatisationplans', 'privatisationplanlist', 'privatizationobjects']
         for table in required_tables:
@@ -42,10 +58,10 @@ def test_main_module():
                 print(f"✓ Table {table} exists")
             else:
                 print(f"✗ Table {table} missing")
-        
+
         conn.close()
     else:
-        print("✗ Database file was not created")
+        print("✗ Database connection failed")
 
 
 def test_metadownload_module():
@@ -71,21 +87,21 @@ def test_metadownload_module():
 def test_excel_export():
     """Test the Excel export functionality"""
     print("\nTesting Excel export...")
-    
+
     # First, try to load some data if possible
     try:
         # Check if there's data to export
-        conn = sqlite3.connect('torgi.db')
+        conn = get_db_connection()
         cursor = conn.cursor()
-        
+
         # Check if tables have data
         for table in ['privatisationplans', 'privatisationplanlist', 'privatizationobjects']:
             cursor.execute(f"SELECT COUNT(*) FROM {table}")
             count = cursor.fetchone()[0]
             print(f"Records in {table}: {count}")
-        
+
         conn.close()
-        
+
         # Try to export to Excel
         result = subprocess.run([sys.executable, 'createexcel_privplans.py', '--export'], capture_output=True, text=True)
         print("Excel export result:", result.returncode)
@@ -93,13 +109,13 @@ def test_excel_export():
             print("STDOUT:", result.stdout)
         if result.stderr:
             print("STDERR:", result.stderr)
-        
+
         # Check if Excel file was created
         if os.path.exists('privatisation_plans_export.xlsx'):
             print("✓ Excel file created successfully")
         else:
             print("✗ Excel file was not created")
-            
+
     except Exception as e:
         print(f"Error testing Excel export: {str(e)}")
 
@@ -107,25 +123,31 @@ def test_excel_export():
 def test_masterdata_module():
     """Test the masterdata module"""
     print("\nTesting masterdata module...")
-    
+
     result = subprocess.run([sys.executable, 'masterdata.py', '--createdb'], capture_output=True, text=True)
     print("Masterdata creation result:", result.returncode)
     if result.stdout:
         print("STDOUT:", result.stdout)
     if result.stderr:
         print("STDERR:", result.stderr)
-    
+
     # Check if NSI tables were created
     try:
-        conn = sqlite3.connect('torgi.db')
+        conn = get_db_connection()
         cursor = conn.cursor()
-        
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+
+        # Get list of tables (different query for SQL Server)
+        db_type = os.getenv('TORGIDB', 'SQLITE').upper()
+        if db_type == 'SQLSERVER':
+            cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'")
+        else:
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+            
         tables = cursor.fetchall()
-        
-        nsi_tables = [table[0] for table in tables if table[0].startswith('nsi_')]
+
+        nsi_tables = [table[0] for table in [t[0] for t in tables] if table[0].startswith('nsi_')]
         print(f"NSI tables created: {nsi_tables}")
-        
+
         conn.close()
     except Exception as e:
         print(f"Error checking NSI tables: {str(e)}")

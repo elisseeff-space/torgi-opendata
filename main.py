@@ -6,21 +6,21 @@ Main module for downloading and processing open data from torgi.gov.ru
 import argparse
 import os
 import sys
-import sqlite3
 from datetime import datetime
 import json
 import uuid
 import requests
 from urllib.parse import urljoin
+from db_utils import get_db_connection, execute_query, create_table_sqlite_to_sqlserver
 
 
 def create_database():
-    """Create SQLite database with required tables"""
-    conn = sqlite3.connect('torgi.db')
+    """Create database with required tables (SQLite or SQL Server)"""
+    conn = get_db_connection()
     cursor = conn.cursor()
-    
+
     # Create privatisationplans table
-    cursor.execute('''
+    create_sql = '''
         CREATE TABLE IF NOT EXISTS privatisationplans (
             globalid TEXT PRIMARY KEY,
             createdate TEXT,
@@ -32,10 +32,11 @@ def create_database():
             publishdate TEXT,
             href TEXT
         )
-    ''')
-    
+    '''
+    cursor.execute(create_table_sqlite_to_sqlserver(create_sql))
+
     # Create privatisationplanlist table
-    cursor.execute('''
+    create_sql = '''
         CREATE TABLE IF NOT EXISTS privatisationplanlist (
             globalid TEXT PRIMARY KEY,
             createdate TEXT,
@@ -57,13 +58,13 @@ def create_database():
             authority TEXT,
             sum_first_year TEXT,
             sum_second_year TEXT,
-            sum_third_year TEXT,
-            FOREIGN KEY (regnum) REFERENCES privatisationplans (regnum)
+            sum_third_year TEXT
         )
-    ''')
-    
+    '''
+    cursor.execute(create_table_sqlite_to_sqlserver(create_sql))
+
     # Create privatizationobjects table
-    cursor.execute('''
+    create_sql = '''
         CREATE TABLE IF NOT EXISTS privatizationobjects (
             globalid TEXT PRIMARY KEY,
             createdate TEXT,
@@ -79,20 +80,20 @@ def create_database():
             location TEXT,
             purpose_code TEXT,
             purpose_name TEXT,
-            kad_number TEXT,
-            FOREIGN KEY (id) REFERENCES privatisationplanlist (regnum)
+            kad_number TEXT
         )
-    ''')
-    
+    '''
+    cursor.execute(create_table_sqlite_to_sqlserver(create_sql))
+
     conn.commit()
     conn.close()
 
 
 def load_privatisation_data():
     """Load privatisation data from JSON files into database tables"""
-    conn = sqlite3.connect('torgi.db')
+    conn = get_db_connection()
     cursor = conn.cursor()
-    
+
     # Load data from privatisationplans data files
     priv_dir = './privatisationplans/'
     for filename in os.listdir(priv_dir):
@@ -100,13 +101,14 @@ def load_privatisation_data():
             filepath = os.path.join(priv_dir, filename)
             with open(filepath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                
+
                 for obj in data.get('listObjects', []):
                     global_id = str(uuid.uuid4())
                     now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-                    
+
                     # Insert into privatisationplans table
-                    cursor.execute('''
+                    # Using execute_query function to handle differences between SQLite and SQL Server
+                    execute_query('''
                         INSERT OR REPLACE INTO privatisationplans
                         (globalid, createdate, updatedate, regnum, hostingorg, bidderorgcode, documenttype, publishdate, href)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -119,9 +121,6 @@ def load_privatisation_data():
                         obj.get('publishDate'),
                         obj.get('href')
                     ))
-    
-    conn.commit()
-    conn.close()
 
 
 def download_and_process_document(href_url, reg_num):
@@ -129,32 +128,29 @@ def download_and_process_document(href_url, reg_num):
     try:
         response = requests.get(href_url)
         response.raise_for_status()
-        
+
         doc_data = response.json()
         export_obj = doc_data.get('exportObject', {})
         structured_obj = export_obj.get('structuredObject', {})
-        
-        conn = sqlite3.connect('torgi.db')
-        cursor = conn.cursor()
-        
+
         # Process different types of documents
         if 'privatizationPlan' in structured_obj:
             plan_data = structured_obj['privatizationPlan']
-            
+
             global_id = str(uuid.uuid4())
             now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-            
+
             common_info = plan_data.get('commonInfo', {})
             hosting_org = plan_data.get('hostingOrg', {})
             planing_period = plan_data.get('planingPeriodInfo', {})
             budget_revenue = plan_data.get('budgetRevenueForecast', {})
-            
+
             # Insert into privatisationplanlist table
-            cursor.execute('''
+            execute_query('''
                 INSERT OR REPLACE INTO privatisationplanlist
-                (globalid, createdate, updatedate, regnum, plan_number, plan_name, 
-                publish_date, signing_date, planing_period, org_code, org_name, 
-                org_inn, org_kpp, org_ogrn, org_type, budget_code, budget_name, 
+                (globalid, createdate, updatedate, regnum, plan_number, plan_name,
+                publish_date, signing_date, planing_period, org_code, org_name,
+                org_inn, org_kpp, org_ogrn, org_type, budget_code, budget_name,
                 authority, sum_first_year, sum_second_year, sum_third_year)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
@@ -170,25 +166,25 @@ def download_and_process_document(href_url, reg_num):
                 hosting_org.get('KPP'),
                 hosting_org.get('OGRN'),
                 hosting_org.get('orgType'),
-                plan_data.get('budget', {}).get('code'),
-                plan_data.get('budget', {}).get('name'),
-                plan_data.get('authority'),
+                budget_revenue.get('budget', {}).get('code'),
+                budget_revenue.get('budget', {}).get('name'),
+                budget_revenue.get('authority'),
                 budget_revenue.get('sumFirstYear'),
                 budget_revenue.get('sumSecondYear'),
                 budget_revenue.get('sumThirdYear')
             ))
-            
+
             # Process privatization objects
             for obj in plan_data.get('privatizationObjects', []):
                 obj_global_id = str(uuid.uuid4())
-                
+
                 subject_rf = obj.get('subjectRF', {})
                 purpose = obj.get('purpose', {})
-                
-                cursor.execute('''
+
+                execute_query('''
                     INSERT OR REPLACE INTO privatizationobjects
-                    (globalid, createdate, updatedate, id, object_number, status_object, 
-                    name, type, timing, subject_rf_code, subject_rf_name, location, 
+                    (globalid, createdate, updatedate, id, object_number, status_object,
+                    name, type, timing, subject_rf_code, subject_rf_name, location,
                     purpose_code, purpose_name, kad_number)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', (
@@ -205,27 +201,24 @@ def download_and_process_document(href_url, reg_num):
                     purpose.get('name'),
                     obj.get('kadNumber')
                 ))
-        
-        conn.commit()
-        conn.close()
-        
+
     except Exception as e:
         print(f"Error processing document {href_url}: {str(e)}")
 
 
 def process_all_documents():
     """Process all documents referenced in the privatisation plans"""
-    conn = sqlite3.connect('torgi.db')
+    conn = get_db_connection()
     cursor = conn.cursor()
-    
+
     # Get all records with href from privatisationplans
     cursor.execute("SELECT regnum, href FROM privatisationplans WHERE href IS NOT NULL")
     records = cursor.fetchall()
-    
+
     for reg_num, href in records:
         print(f"Processing document for regnum: {reg_num}")
         download_and_process_document(href, reg_num)
-    
+
     conn.close()
 
 

@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "PlanOpenDataList",
+	"description": "Структура набора открытых данных планов приватизации. Версия 2.0 от 09.09.2022",
+	"type": "object",
+	"properties": {
+		"listObjects": {
+			"$ref": "#/definitions/ListObjects"
+		}
+	},
+	"additionalProperties": false,
+	"definitions": {
+		"ListObjects": {
+			"description": "Cхема для списка выгруженных открытых данных",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/PlanListObject"
+			}
+		},
+		"PlanListObject": {
+			"description": "Информация о выгруженном объекте данных",
+			"type": "object",
+			"properties": {
+				"hostingOrg": {
+					"description": "Код разместившей организации",
+					"type": "string",
+					"minLength": 10,
+					"maxLength": 10
+				},
+				"bidderOrgCode": {
+					"description": "Код организации организатора торгов",
+					"type": "string",
+					"minLength": 10,
+					"maxLength": 10
+				},
+				"documentType": {
+					"description": "Тип документа:\r\nprivatizationPlan - План приватизации;\r\nplanCancel - Аннулирование плана приватизации (признание сведений плана приватизации недействительными);\r\nprivatizationDecision - Решение об условиях приватизации;\r\ndecisionCancel - Признание сведений о решении об условиях приватизации недействительными\r\n",
+					"type": "string",
+					"enum": [
+						"privatizationPlan",
+						"planCancel",
+						"privatizationDecision",
+						"decisionCancel"
+					]
+				},
+				"regNum": {
+					"description": "Реестровый номер объекта",
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 36
+				},
+				"publishDate": {
+					"description": "Дата публикации на сайте torgi.gov.ru ",
+					"type": "string",
+					"format": "date-time"
+				},
+				"href": {
+					"description": "Гиперссылка на скачивание структурированного документа",
+					"type": "string"
+				}
+			},
+			"required": [
+				"hostingOrg",
+				"documentType",
+				"regNum",
+				"publishDate",
+				"href"
+			]
+		}
+	}
+}

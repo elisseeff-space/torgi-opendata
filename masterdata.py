@@ -4,6 +4,7 @@ Module to create and populate master data tables from masterdata JSON files
 """
 
 import json
+import os
 import sqlite3
 import requests
 import argparse
@@ -27,19 +28,35 @@ def create_nsi_tables():
         href = obj.get('href')
         
         if nsi_type and href:
-            # Download the data from href
+            # Process the data from local file (since online URLs may not be accessible)
             try:
                 print(f"Processing NSI type: {nsi_type}")
-                response = requests.get(href)
-                response.raise_for_status()
                 
-                data = response.json()
+                # Extract filename from the href
+                filename = href.split('/')[-1]
+                local_file_path = f'./masterdata/{filename}'
+                
+                # Check if local file exists before trying to load it
+                if not os.path.exists(local_file_path):
+                    print(f"Warning: Local file does not exist: {local_file_path}. Skipping NSI type: {nsi_type}")
+                    continue
+                
+                # Load data from local file
+                with open(local_file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                
                 export_obj = data.get('exportObject', {})
                 structured_obj = export_obj.get('structuredObject', {})
                 
-                # Get the masterData object which contains the array of items
+                # Get the masterData object which contains the NSI array of items
                 master_data = structured_obj.get('masterData', {})
-                nsi_items = master_data.get(nsi_type, [])
+                nsi_array = master_data.get('NSI', [])
+                
+                # Extract items for the specific NSI type from the NSI array
+                nsi_items = []
+                for item in nsi_array:
+                    if nsi_type in item:
+                        nsi_items.append(item[nsi_type])
                 
                 if not nsi_items:
                     print(f"No items found for NSI type: {nsi_type}")
@@ -65,6 +82,9 @@ def create_nsi_tables():
                             for nested_key in value.keys():
                                 col_name = f"{key}_{nested_key}"
                                 columns.append(f"{col_name} TEXT")
+                        elif isinstance(value, list):
+                            # Handle top-level array fields - store as JSON string
+                            columns.append(f"{key} TEXT")
                         else:
                             # Simple field
                             columns.append(f"{key} TEXT")
@@ -87,10 +107,22 @@ def create_nsi_tables():
                                 # Handle nested dictionary
                                 for nested_key in value.keys():
                                     val = item.get(key, {}).get(nested_key)
+                                    # Convert complex objects (dicts, lists) to JSON string for storage
+                                    if isinstance(val, (dict, list)):
+                                        val = json.dumps(val, ensure_ascii=False)
                                     values.append(val if val is not None else '')
+                            elif isinstance(value, list):
+                                # Handle top-level array fields by converting to JSON string
+                                val = item.get(key)
+                                if isinstance(val, (dict, list)):
+                                    val = json.dumps(val, ensure_ascii=False)
+                                values.append(val if val is not None else '')
                             else:
                                 # Simple field
                                 val = item.get(key)
+                                # Convert complex objects (dicts, lists) to JSON string for storage
+                                if isinstance(val, (dict, list)):
+                                    val = json.dumps(val, ensure_ascii=False)
                                 values.append(val if val is not None else '')
                         
                         # Build INSERT query

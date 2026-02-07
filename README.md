@@ -15,7 +15,7 @@ torgi-opendata
 - поле createdate. Значение этого поля должно генерироваться, как текущие дата и время в формате YYYY-MM-DDThh:mm:ss при внесении записи в таблицу.
 - поле updatedate. Значение этого поля должно генерироваться, как текущие дата и время в формате YYYY-MM-DDThh:mm:ss при внесении записи в таблицу. При обновлении записи значение этого поля должно актуализировать датой и временем изменения данных.
 
-3. Добавь в main.py функционал создания таблицы privatisationplans. Состав полей возьми из файла ./privatisationplans/structure-* tag "definitions":"PlanListObject":"properties". Поле regnum должно быть уникальным первичным ключом. Заполнение таблицы данными сделай из файлов ./privatisationplans/data-*
+3. Добавь в main.py функционал создания таблицы privatisationplans. Состав полей возьми из файла ./privatisationplans/structure-* tag "definitions":"PlanListObject":"properties". Поле globalid должно быть уникальным первичным ключом. Заполнение таблицы данными сделай из файлов ./privatisationplans/data-*
 
 4. Добавь в main.py функционал создания таблицы privatisationplanlist, связанной с privatisationplans по foreinkey regnum. Состав полей возьми из файла ./privatisationplans/privatizationPlan_*
 Расширь состав полей таблицы privatisationplanlist. Добавь недостающие поля из файлов planReport*.json & privatizationDecision*.json. 

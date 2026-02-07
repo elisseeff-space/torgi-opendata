@@ -25,7 +25,7 @@ def create_database():
             globalid TEXT PRIMARY KEY,
             createdate TEXT,
             updatedate TEXT,
-            regnum TEXT UNIQUE NOT NULL,
+            regnum TEXT NOT NULL,
             hostingorg TEXT,
             bidderorgcode TEXT,
             documenttype TEXT,
@@ -107,16 +107,16 @@ def load_privatisation_data():
                     
                     # Insert into privatisationplans table
                     cursor.execute('''
-                        INSERT OR IGNORE INTO privatisationplans 
+                        INSERT OR REPLACE INTO privatisationplans
                         (globalid, createdate, updatedate, regnum, hostingorg, bidderorgcode, documenttype, publishdate, href)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                     ''', (
-                        global_id, now, now, 
-                        obj.get('regNum'), 
-                        obj.get('hostingOrg'), 
-                        obj.get('bidderOrgCode'), 
-                        obj.get('documentType'), 
-                        obj.get('publishDate'), 
+                        global_id, now, now,
+                        obj.get('regNum'),
+                        obj.get('hostingOrg'),
+                        obj.get('bidderOrgCode'),
+                        obj.get('documentType'),
+                        obj.get('publishDate'),
                         obj.get('href')
                     ))
     
